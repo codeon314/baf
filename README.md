@@ -103,9 +103,14 @@ Because all navigation, DOM inspection, clicking, input entry, and scraping happ
 
 ## Quick Start
 
+> **Prerequisites:**
+> * **Running the Program:** You must have the **.NET 10 Desktop Runtime** installed to run the program.  
+>   **Direct Download (Windows x64 Installer):** [Download .NET 10.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-10.0.14-windows-x64-installer) (`https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-10.0.14-windows-x64-installer`)
+> * **Building from Source:** **Visual Studio 2026** is required to build the project.
+
 ### Option A: Using the BAF Studio GUI
 
-1. **Build and Run BAF Studio:**
+1. **Build and Run BAF Studio (Requires Visual Studio 2026):**
    ~~~bash
    dotnet build
    dotnet run --project "BAF Studio/BAF Studio.csproj"
