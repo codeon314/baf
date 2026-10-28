@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <AssemblyName>BAF Studio</AssemblyName>
+    <RootNamespace>BAFStudio</RootNamespace>
+    <Product>BAF Studio</Product>
+    <Title>BAF Studio - Browser Automation Framework Studio</Title>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyTitle>BAF Studio</AssemblyTitle>
+    <Platforms>AnyCPU;x64</Platforms>
+    <ApplicationIcon>baf-studio-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BrowserAutomationFramework\BrowserAutomationFramework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="baf-studio-icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="baf-studio-icon.svg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

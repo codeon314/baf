@@ -1,0 +1,27 @@
+﻿{
+  "manifest_version": 3,
+  "name": "Browser Automation Framework Bridge",
+  "version": "1.0.0",
+  "description": "Reports open browser tabs to Browser Automation Framework and enables one-click script injection and tab switching.",
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "activeTab",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://127.0.0.1/*",
+    "http://localhost/*",
+    "ws://127.0.0.1/*",
+    "ws://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "BAF Automation Bridge",
+    "default_popup": "popup.html"
+  }
+}

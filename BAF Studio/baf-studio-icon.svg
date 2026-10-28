@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Left Chevron Gradient (Electric Cyan -> Azure) -->
+    <linearGradient id="leftChevronGrad" x1="36" y1="104" x2="184" y2="408" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00F5D4" />
+      <stop offset="55%" stop-color="#00BBF9" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+
+    <!-- Right Chevron Gradient (Sky Blue -> Electric Indigo -> Neon Violet) -->
+    <linearGradient id="rightChevronGrad" x1="328" y1="104" x2="476" y2="408" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="50%" stop-color="#818CF8" />
+      <stop offset="100%" stop-color="#C084FC" />
+    </linearGradient>
+
+    <!-- Central Lightning Bolt Gradient (Bright White-Cyan -> Electric Cyan) -->
+    <linearGradient id="boltFillGrad" x1="200" y1="40" x2="312" y2="472" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="38%" stop-color="#9BF6FF" />
+      <stop offset="75%" stop-color="#00F5D4" />
+      <stop offset="100%" stop-color="#00BBF9" />
+    </linearGradient>
+
+    <!-- Bolt Rim Highlight Gradient -->
+    <linearGradient id="boltStrokeGrad" x1="168" y1="40" x2="344" y2="472" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#00F5D4" />
+    </linearGradient>
+
+    <!-- High-Contrast Dark Mode / Light Mode Separation Shadow -->
+    <filter id="iconShadow" x="-15%" y="-15%" width="130%" height="130%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#020617" flood-opacity="0.65" />
+    </filter>
+  </defs>
+
+  <!-- Left Code Bracket `<` -->
+  <g filter="url(#iconShadow)">
+    <!-- Dark contrast outline for visibility on light backgrounds -->
+    <path d="M168 112 L44 256 L168 400"
+          stroke="#090D16"
+          stroke-width="76"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+    <!-- Vibrant Cyan Chevron -->
+    <path d="M168 112 L44 256 L168 400"
+          stroke="url(#leftChevronGrad)"
+          stroke-width="60"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+  </g>
+
+  <!-- Right Code Bracket `>` -->
+  <g filter="url(#iconShadow)">
+    <!-- Dark contrast outline for visibility on light backgrounds -->
+    <path d="M344 112 L468 256 L344 400"
+          stroke="#090D16"
+          stroke-width="76"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+    <!-- Vibrant Violet/Blue Chevron -->
+    <path d="M344 112 L468 256 L344 400"
+          stroke="url(#rightChevronGrad)"
+          stroke-width="60"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+  </g>
+
+  <!-- Central Automation Lightning Bolt `⚡` -->
+  <g filter="url(#iconShadow)">
+    <!-- Dark separation halo so the bolt cuts crisply through the center at 16x16 and 32x32 -->
+    <polygon points="300,36 156,280 254,280 212,476 356,232 258,232"
+             fill="#090D16"
+             stroke="#090D16"
+             stroke-width="24"
+             stroke-linejoin="round" />
+
+    <!-- Main High-Contrast Lightning Bolt -->
+    <polygon points="300,36 156,280 254,280 212,476 356,232 258,232"
+             fill="url(#boltFillGrad)"
+             stroke="url(#boltStrokeGrad)"
+             stroke-width="6"
+             stroke-linejoin="round" />
+  </g>
+</svg>

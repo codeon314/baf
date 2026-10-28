@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>BAF Automation Bridge</title>
+    <style>
+        body {
+            width: 380px;
+            margin: 0;
+            padding: 12px;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            font-size: 13px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #333;
+        }
+        .title {
+            font-weight: 600;
+            font-size: 14px;
+            color: #fff;
+        }
+        .badge {
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .badge-connected { background: #135c2d; color: #73f59b; }
+        .badge-disconnected { background: #663c00; color: #ffca6b; }
+        .port-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+        input[type="number"] {
+            width: 80px;
+            padding: 4px 6px;
+            background: #252526;
+            border: 1px solid #454545;
+            color: #fff;
+        }
+        button {
+            background: #0e639c;
+            color: #fff;
+            border: 1px solid #1177bb;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        button:hover { background: #1177bb; }
+        button.btn-secondary {
+            background: #333337;
+            border-color: #46464a;
+        }
+        button.btn-secondary:hover { background: #3e3e42; }
+        button.btn-danger {
+            background: #7a2121;
+            border-color: #9e2e2e;
+        }
+        .current-box {
+            background: #252526;
+            border: 1px solid #3c3c3c;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        .tab-list {
+            max-height: 240px;
+            overflow-y: auto;
+            border: 1px solid #3c3c3c;
+            background: #252526;
+        }
+        .tab-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 8px;
+            border-bottom: 1px solid #2d2d30;
+            gap: 8px;
+        }
+        .tab-item.injected {
+            background: rgba(19, 92, 45, 0.28);
+            border-left: 3px solid #2ea043;
+        }
+        .tab-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .tab-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+        .tab-url {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #888;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="title">BAF Automation Bridge</span>
+        <span id="statusBadge" class="badge badge-disconnected">Checking...</span>
+    </div>
+
+    <div class="port-row">
+        <label for="portInput">Server Port:</label>
+        <input id="portInput" type="number" min="1024" max="65535" value="9999" />
+        <button id="btnSavePort" class="btn-secondary">Apply / Reconnect</button>
+    </div>
+
+    <div class="current-box">
+        <div style="margin-bottom: 6px; font-weight: 600;">Active Browser Tab</div>
+        <div id="currentTabTitle" class="tab-title" style="margin-bottom: 6px;">Loading...</div>
+        <div style="display: flex; gap: 6px;">
+            <button id="btnAttachCurrent" style="flex: 1;">Inject &amp; Switch Here</button>
+            <button id="btnDetachCurrent" class="btn-danger" style="display: none;">Detach</button>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 4px; font-weight: 600;">All Open Tabs</div>
+    <div id="tabList" class="tab-list"></div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
